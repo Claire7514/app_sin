@@ -25,14 +25,5 @@ class Gossip
     return all_gossips
   end
 
-  def self.find(find_id)
-    find_id = find_id.to_i
-    gossip_found = nil
-    Gossip.all.each do |one_gossip|
-      (one_gossip.id.to_i == find_id)? gossip_found = one_gossip : ""
-    end
-    gossip_found
-  end
-
 end
 
