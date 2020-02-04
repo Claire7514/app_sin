@@ -3,12 +3,12 @@ require 'csv'
 
 class Gossip
 
-  attr_accessor :author, :content, :id
+  attr_accessor :author, :content, :name
 
   def initialize(author_init, content_init)
     @author = author_init
     @content = content_init
-    @id = id
+    @name = name
   end
 
   def save
@@ -29,7 +29,7 @@ class Gossip
     find_id = find_id.to_i
     gossip_found = nil
     Gossip.all.each do |one_gossip|
-      (one_gossip.id.to_i == find_id)? gossip_found = one_gossip : ""
+      (one_gossip.name.to_i == find_id)? gossip_found = one_gossip : ""
     end
     gossip_found
   end
